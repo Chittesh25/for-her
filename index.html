@@ -1,98 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>You’re Safe Here</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Comfort Space</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(160deg, #f4faff, #dcefff);
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-      padding: 40px 20px;
-      text-align: center;
+      margin: 0;
+      padding: 0;
+      background: #f8e9f0;
+      font-family: 'Playfair Display', serif;
+      color: #3b3045;
+      overflow-x: hidden;
     }
 
     .container {
-      max-width: 700px;
-      background-color: #ffffffcc;
-      border-radius: 24px;
-      padding: 40px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 3rem 1rem;
+      position: relative;
     }
 
     h1 {
-      font-size: 2.2rem;
-      color: #2c3e50;
-      margin-bottom: 20px;
+      font-size: 3rem;
+      margin: 1.5rem 0 1rem;
     }
 
-    .quote {
-      font-size: 1.1rem;
+    p.subtitle {
+      font-size: 1.2rem;
+      margin: 0 0 1rem;
+    }
+
+    .player-box {
+      background-color: #fef3eb;
+      padding: 2rem 1rem;
+      margin: 2rem auto;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    .player-box h2 {
       font-style: italic;
-      color: #5e6e73;
-      margin: 20px 0 40px 0;
+      margin-bottom: 1rem;
     }
 
     audio {
       width: 100%;
-      margin: 20px 0;
+      margin-bottom: 1.5rem;
     }
 
-    .note {
-      font-size: 1rem;
-      color: #444;
-      line-height: 1.6;
-      margin-top: 30px;
+    .quote {
+      font-size: 1.1rem;
+      line-height: 1.8;
     }
 
-    .footer {
-      margin-top: 60px;
-      font-size: 0.9rem;
-      color: #888;
+    .footer-quote {
+      margin-top: 3rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .leaf, .star {
+      position: absolute;
+      animation: fall linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-100px) rotate(0); opacity: 0.6; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+    .cup {
+      margin-top: 1.5rem;
+      width: 80px;
+      height: auto;
     }
   </style>
 </head>
-
 <body>
   <div class="container">
-    <h1>You’re Safe Here</h1>
-    <p class="quote">“Take a deep breath. You're doing better than you think.”</p>
+    <p class="subtitle">This is your space. A pause. A breath. A reminder that you’re not alone.</p>
+    <h1>Comfort Space</h1>
 
-    <!-- Audio message placeholder -->
-    <audio controls>
-      <source src="your-voice-message.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-
-    <p class="note">
-      This space was created just for you. For the moments when the world feels too heavy, when you feel like giving up,
-      when everything seems a little too loud — come back here. Hear the truth: You are enough. You’ve always been.
-      You are so deeply loved, appreciated, and admired for your courage, your kindness, and your effort.
-    </p>
-
-    <p class="note">
-      It's okay to feel tired. It's okay to cry. It's okay to not be okay. But never forget — you matter. You’re seen.
-      You are not alone. I'm here, even in the silence.
-    </p>
-
-    <div class="footer">
-      From someone who deeply cares 🕊️
+    <div class="player-box">
+      <h2>from me to you</h2>
+      <audio controls>
+        <source src="your-voice-message.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <p class="quote">
+        It’s okay to feel this way.<br/>
+        You are stronger than you know.<br/>
+        You don’t have to have it all figured out.
+      </p>
     </div>
+
+    <p class="footer-quote">
+      Whenever you need it,<br/> this space stays open for you.
+    </p>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Cup_icon_pink.svg/512px-Cup_icon_pink.svg.png" alt="Cup" class="cup" />
+
+    <!-- Falling Leaves & Stars -->
+    <script>
+      const symbols = ['✨', '★', '⭐', '🌿'];
+
+      function createFloating() {
+        const el = document.createElement('div');
+        el.classList.add(Math.random() > 0.5 ? 'leaf' : 'star');
+        el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        el.style.left = Math.random() * 100 + 'vw';
+        el.style.fontSize = (Math.random() * 14 + 10) + 'px';
+        el.style.animationDuration = (Math.random() * 10 + 5) + 's';
+        document.body.appendChild(el);
+
+        setTimeout(() => el.remove(), 15000);
+      }
+
+      setInterval(createFloating, 400);
+    </script>
   </div>
 </body>
-
 </html>
