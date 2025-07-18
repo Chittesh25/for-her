@@ -1,77 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For Her</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <title>You’re Safe Here</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      font-family: 'Quicksand', sans-serif;
-      background: linear-gradient(to bottom, #ffe9f0 0%, #fff 100%);
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(160deg, #f4faff, #dcefff);
       color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 40px 20px;
       text-align: center;
     }
-    header {
-      padding: 60px 20px 20px;
-    }
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      color: #e91e63;
-      margin-bottom: 10px;
-    }
-    .quote {
-      font-size: 1.2rem;
-      margin: 20px auto;
-      max-width: 600px;
-      color: #444;
-      font-style: italic;
-    }
-    .hero-image {
-      width: 90%;
+
+    .container {
       max-width: 700px;
+      background-color: #ffffffcc;
       border-radius: 24px;
-      margin: 20px auto;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      padding: 40px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
-    .section {
-      margin: 40px auto;
-      max-width: 700px;
+
+    h1 {
+      font-size: 2.2rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
     }
+
+    .quote {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #5e6e73;
+      margin: 20px 0 40px 0;
+    }
+
+    audio {
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    .note {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+      margin-top: 30px;
+    }
+
     .footer {
-      padding: 30px;
+      margin-top: 60px;
       font-size: 0.9rem;
       color: #888;
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>For Her</h1>
-    <p class="quote">"In a world full of noise, you are my favorite melody."</p>
-  </header>
+  <div class="container">
+    <h1>You’re Safe Here</h1>
+    <p class="quote">“Take a deep breath. You're doing better than you think.”</p>
 
-  <div class="section">
-    <img src="https://chittesh25.github.io/for-her/images/poster.jpg" alt="Love Poster" class="hero-image">
-    <p class="quote">"You’re not just my person. You’re my peace, my laughter, my reason to dream bigger."</p>
-  </div>
+    <!-- Audio message placeholder -->
+    <audio controls>
+      <source src="your-voice-message.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
 
-  <div class="section">
-    <p class="quote">"Every beat of this site, every pixel, every word—carries pieces of my love for you."
-    <br><br>“This isn’t a website. It’s a love letter.”</p>
-  </div>
+    <p class="note">
+      This space was created just for you. For the moments when the world feels too heavy, when you feel like giving up,
+      when everything seems a little too loud — come back here. Hear the truth: You are enough. You’ve always been.
+      You are so deeply loved, appreciated, and admired for your courage, your kindness, and your effort.
+    </p>
 
-  <div class="section">
-    <!-- Placeholder for voice message -->
-    <p class="quote">Voice message loading... (you'll smile when it plays 💖)</p>
-  </div>
+    <p class="note">
+      It's okay to feel tired. It's okay to cry. It's okay to not be okay. But never forget — you matter. You’re seen.
+      You are not alone. I'm here, even in the silence.
+    </p>
 
-  <div class="footer">
-    Created with all my heart ❤️<br>
-    — Chittesh
+    <div class="footer">
+      From someone who deeply cares 🕊️
+    </div>
   </div>
 </body>
+
 </html>
