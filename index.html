@@ -1,97 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>From Me to You</title>
-  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comfort Space</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
       font-family: 'Quicksand', sans-serif;
-      background: linear-gradient(to bottom right, #f7e9e3, #e4f0e2);
+      background: linear-gradient(135deg, #f9f3f7 0%, #eef7f9 100%);
       color: #333;
+      display: flex; justify-content: center; align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+      position: relative;
       overflow-x: hidden;
     }
-
     .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 2rem;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 2;
     }
-
     h1 {
-      font-family: 'Sacramento', cursive;
-      font-size: 3rem;
-      color: #7b4f3f;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
-      text-shadow: 1px 1px 2px #ffe;
+      color: #4a4a4a;
     }
-
-    .message {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin-bottom: 2rem;
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 1.5rem;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    .description {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
     }
-
     .audio-player {
-      margin: 1.5rem auto;
-      padding: 1rem;
-      background-color: #fef6f3;
-      border: 2px solid #e7cfc3;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+      margin: 2rem auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(255,182,193,0.3);
+      animation: glow 2.5s ease-in-out infinite;
     }
-
+    @keyframes glow {
+      0%,100% { box-shadow: 0 0 15px rgba(255,182,193,0.3); }
+      50% { box-shadow: 0 0 30px rgba(255,182,193,0.6); }
+    }
+    .audio-player h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
+      color: #7b4f3f;
+      margin-bottom: 0.5rem;
+    }
     audio {
       width: 100%;
       outline: none;
     }
-
-    .cup-img {
-      margin-top: 2rem;
-      max-width: 180px;
+    .message {
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.6;
+      margin-top: 1rem;
     }
-
-    .leaves {
+    /* Floating mug animation */
+    .mug {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: auto;
-      opacity: 0.1;
-      z-index: -1;
+      bottom: 10px;
+      right: 20px;
+      width: 100px;
+      animation: float 4s ease-in-out infinite;
+      z-index: 1;
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    /* Leaves background */
+    .leaves-bg {
+      position: absolute;
+      top: -50px; left: -50px;
+      width: calc(100% + 100px);
+      height: calc(100% + 100px);
+      background: url('https://cdn.pixabay.com/photo/2017/08/30/07/52/leaves-2692315_1280.png') center/cover no-repeat;
+      opacity: 0.05;
+      z-index: 0;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .audio-player { padding: 15px; }
+      .audio-player h2 { font-size: 1.5rem; }
+      .mug { width: 80px; bottom: 5px; right: 10px; }
     }
   </style>
 </head>
-
 <body>
+  <div class="leaves-bg"></div>
   <div class="container">
-    <h1>From Me to You</h1>
-    <div class="message">
-      This space is yours — a warm, calm corner of the world where you're always safe to feel, to breathe, and just be.
-      It’s okay to feel like this. You're not alone, and you're deeply loved.
-    </div>
+    <h1>Comfort Space</h1>
+    <p class="description">This is your space. A pause. A breath. A reminder that you’re not alone.</p>
     <div class="audio-player">
+      <h2>from me to you</h2>
       <audio controls>
-        <source src="your-voice-message.mp3" type="audio/mp3">
+        <source src="your-voice-message.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
+      <p class="message">It’s okay to feel this way.<br/>You are stronger than you know.<br/>You don’t have to have it all figured out.</p>
     </div>
-    <img src="https://cdn-icons-png.flaticon.com/512/2547/2547479.png" alt="Cup of warmth" class="cup-img">
+    <p class="description">Whenever you need it, this space stays open for you.</p>
   </div>
-  <img src="https://cdn.pixabay.com/photo/2017/08/30/07/52/leaf-2697523_1280.png" class="leaves" alt="leaves">
+  <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" alt="Cup of warmth" class="mug" />
 </body>
-
 </html>
